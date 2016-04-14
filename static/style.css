@@ -1,0 +1,59 @@
+#container {
+	margin: 10px;
+	font-family: arial
+}
+
+form {
+	margin: 10px;
+}
+
+form p {
+	display: inline-block;
+}
+
+	form .submitting {
+		background: black;
+		color: white;
+		border: none;
+		padding: 5px 10px;
+		text-decoration: none;
+	}
+
+
+table {
+	width: 500px;
+	border: 1px solid black;
+}
+
+	table th button {
+		border: none;
+		font-size: 1em;
+		background-color: white;	
+
+	}
+	table tr th {
+		text-align: left;
+		height: 30px;
+		width: 200px;
+	}
+
+	table tr td {
+		height: 30px;
+		width: 200px;
+		padding-left: 5px;
+	}
+
+	table tr td a {
+		background: black;
+		color: white;
+		border: none;
+		padding: 5px 10px;
+		text-decoration: none;
+	}
+
+.sortorder:after {
+  content: '\25b2';
+}
+.sortorder.reverse:after {
+  content: '\25bc';
+}

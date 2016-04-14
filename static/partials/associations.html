@@ -1,0 +1,33 @@
+<div ng-controller="associationController">
+    <form>
+    	<!-- <select ng-model="myAssoc.player" ng-options="player.name for player in players"> -->
+    	<select ng-model="myAssoc.player">
+    		<option ng-repeat="player in players">{{player.name}}</option>
+    	</select>
+
+    	<select ng-model="myAssoc.name">
+    		<option ng-repeat="team in teams">{{team.name}}</option>
+    	</select>
+
+    	<input class="submitting" type="submit" value="Assign Player to Team" ng-click="addAssoc()">
+    </form>
+
+    <table>
+    	<tr>
+    		<th><button ng-click="order('player')">Name</button>
+				<span class="sortorder" ng-show="predicate === 'player'" ng-class="{reverse:reverse}"></span></th>
+    		<th><button ng-click="order('name')">Team</button>
+				<span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span></th>
+    		<th>Action</th>
+    	</tr>
+    	<tr  ng-repeat='assoc in assocs | orderBy:predicate:reverse'>
+    		<td>{{assoc.player}}</td>
+    		<td>{{assoc.name}}</td>
+    		<td><a href="" ng-click="removeAssocs(assoc)">Clear Assignment</a></td>
+    	</tr>
+
+
+
+    </table>
+
+</div>

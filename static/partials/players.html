@@ -1,0 +1,28 @@
+<div ng-controller="playerController">
+
+	<div>
+		<form>
+			<p>Player Name</p>	<input type="text" ng-model="newPlayer.name">
+			<input class="submitting" type="submit" value="Add Player" ng-click="addPlayer()">
+		</form>
+
+	</div>
+
+	<div>
+		<table>
+			<tr>
+				<th>
+					<button ng-click="order('name')">Name</button>
+				<span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span></th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat='player in players | orderBy:predicate:reverse'>
+				<td>{{player.name}}</td>
+				<td><a href="" ng-click="removePlayer(player)">Remove Player</a></td>
+			</tr>
+		</table>
+	</div>
+
+
+
+</div>
